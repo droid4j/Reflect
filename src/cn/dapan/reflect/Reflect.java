@@ -130,7 +130,7 @@ public class Reflect {
         return null;
     }
 
-    public void field(String key, Object arg) {
+    public Reflect field(String key, Object arg) {
         try {
             Field field = clazz.getDeclaredField(key);
             if (!field.isAccessible()) field.setAccessible(true);
@@ -140,6 +140,7 @@ public class Reflect {
         } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
+        return this;
     }
 
     public void method(String method, Object... args) {

@@ -36,9 +36,10 @@ public class UserInfoTest {
         } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
-        Reflect instance = Reflect.inject(UserInfo.class).newInstance(1, "王四");
-        instance.field("id", 10);
-        int id = instance.field("id");
+        int id = Reflect.inject(UserInfo.class)
+                .newInstance(1, "王四") // 创建对象，id=1,name=王四
+                .field("id", 10)// 重新为 id 赋值
+                .field("id"); // 获取 id 的值
         System.out.println(id);
     }
 }
