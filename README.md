@@ -1,4 +1,4 @@
-# Reflect
+# ~~Reflect~~
 采用链式调用封装java反射操作
 
 ```java
@@ -9,3 +9,4 @@ int id = Reflect.inject(UserInfo.class) // 对 UserInfo.class 进行操作
 System.out.println(id);
 ```
 
+使用gradle重建工程，方便引入：https://github.com/droid4j/reflectLib
